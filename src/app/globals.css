@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Identidade visual Moto Táxi Millênio: verde, verde-limão, amarelo e preto */
+:root {
+  --verde: #0b5d1e;
+  --verde-escuro: #063d13;
+  --limao: #8ee000;
+  --amarelo: #f5d90a;
+  --preto: #0a0f0a;
+  --fundo: #f4f7f2;
+  --texto: #0a0f0a;
+  --cartao: #ffffff;
+  --borda: #d6e2d2;
+}
+
+@theme inline {
+  --color-verde: var(--verde);
+  --color-verde-escuro: var(--verde-escuro);
+  --color-limao: var(--limao);
+  --color-amarelo: var(--amarelo);
+  --color-preto: var(--preto);
+  --color-fundo: var(--fundo);
+  --color-texto: var(--texto);
+  --color-cartao: var(--cartao);
+  --color-borda: var(--borda);
+  --font-sans: var(--font-inter);
+  --font-marca: var(--font-barlow);
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.titulo-marca {
+  font-family: var(--font-barlow), sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+}
+
+.campo {
+  @apply w-full rounded-lg border border-borda bg-white px-3 py-2.5 text-base outline-none focus:border-verde focus:ring-2 focus:ring-limao/50;
+}
+
+.rotulo {
+  @apply mb-1 block text-sm font-semibold text-verde-escuro;
+}
+
+.botao {
+  @apply inline-flex items-center justify-center rounded-lg bg-verde px-5 py-3 font-bold text-white transition hover:bg-verde-escuro disabled:opacity-50;
+}
+
+.botao-destaque {
+  @apply inline-flex items-center justify-center rounded-lg bg-limao px-5 py-3 font-extrabold uppercase text-preto transition hover:brightness-95 disabled:opacity-50;
+}
+
+.botao-contorno {
+  @apply inline-flex items-center justify-center rounded-lg border-2 border-verde px-5 py-2.5 font-bold text-verde transition hover:bg-verde hover:text-white disabled:opacity-50;
+}
+
+.cartao {
+  @apply rounded-2xl border border-borda bg-cartao p-5 shadow-sm;
+}
+
+.botao-contorno-claro {
+  @apply inline-flex items-center justify-center rounded-lg border-2 border-white px-5 py-2.5 font-bold text-white transition hover:bg-white hover:text-verde;
+}
